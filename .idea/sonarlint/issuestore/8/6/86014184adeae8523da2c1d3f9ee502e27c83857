@@ -1,0 +1,17 @@
+
+j
+java:S2095>"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8“À¸Ÿğ.
+j
+java:S2095n"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8õ—Ö ğ.
+q
+java:S2095o"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8õ—Ö ğ.
+r
+java:S2095b"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8ªÛÏ ğ.
+U	java:S106f"9Replace this use of System.out or System.err by a logger.(‰·¤È8ªÛÏ ğ.
+q
+java:S2095?"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8“À¸Ÿğ.
+p
+java:S2095a"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8ªÛÏ ğ.
+j
+java:S1192>"MDefine a constant instead of duplicating this literal "src/file.txt" 3 times.(ãÓß8õ—Ö ğ.
+Z	java:S106q"9Replace this use of System.out or System.err by a logger.(ÃµÉ®ıÿÿÿÿ8ôÉÖ ğ.

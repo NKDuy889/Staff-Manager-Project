@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="635.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditController">
+   <children>
+      <Label layoutX="173.0" layoutY="61.0" />
+      <Text layoutX="47.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="47.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <TextField fx:id="idTxt" layoutX="192.0" layoutY="56.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="nameTxt" layoutX="192.0" layoutY="121.0" prefHeight="31.0" prefWidth="208.0" />
+      <Text layoutX="47.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="55.515625" />
+      <TextField fx:id="genderTxt" layoutX="192.0" layoutY="183.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="sdtTxt" layoutX="192.0" layoutY="246.0" prefHeight="31.0" prefWidth="208.0" />
+      <Text layoutX="47.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" />
+      <TextField fx:id="arTxt" layoutX="192.0" layoutY="306.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="emailTxt" layoutX="192.0" layoutY="369.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="nsTxt" layoutX="192.0" layoutY="432.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="dbgTxt" layoutX="192.0" layoutY="489.0" prefHeight="31.0" prefWidth="208.0" />
+      <Text layoutX="47.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text layoutX="47.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <Text layoutX="47.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" />
+      <Text layoutX="47.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day begin work" />
+      <Button layoutX="131.0" layoutY="563.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="95.0" text="Save" />
+      <Button layoutX="308.0" layoutY="563.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="108.0" text="Back" />
+      <Text fill="#753636" layoutX="240.0" layoutY="38.0" stroke="#3c3a3a" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit" textAlignment="CENTER" wrappingWidth="97.8955078125">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <effect>
+            <Glow level="0.67" />
+         </effect>
+      </Text>
+   </children>
+</AnchorPane>

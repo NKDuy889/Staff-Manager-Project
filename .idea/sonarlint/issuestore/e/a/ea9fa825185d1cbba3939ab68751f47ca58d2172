@@ -1,0 +1,13 @@
+
+Y	java:S125—"<This block of commented-out lines of code should be removed.(¬ÏÜ…8­¢É¢ğ.
+q
+java:S2095|"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8¶ÃñÔï.
+U	java:S106s"9Replace this use of System.out or System.err by a logger.(‰·¤È8·Œüÿï.
+p
+java:S2095n"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8É†ñÏï.
+r
+java:S2095o"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8”ÛàÍï.
+j
+java:S2095{"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8·íïÔï.
+I
+java:S1172„",Remove this unused method parameter "event".(ÔîÀ8­¢É¢ğ.

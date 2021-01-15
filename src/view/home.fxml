@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="1319.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+   <children>
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="377.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1293.0">
+         <columns>
+            <TableColumn fx:id="clId" prefWidth="54.0" text="ID" />
+            <TableColumn fx:id="clName" prefWidth="193.0" text="Họ tên" />
+            <TableColumn fx:id="clGender" prefWidth="98.0" text="Giới tính" />
+            <TableColumn fx:id="clPhoneNumber" prefWidth="176.0" text="Số điện thoại" />
+            <TableColumn fx:id="clAddress" prefWidth="197.0" text="Địa chỉ" />
+            <TableColumn fx:id="clEmail" prefWidth="161.0" text="Email" />
+            <TableColumn fx:id="clDateOfBirth" prefWidth="216.0" text="Ngày sinh" />
+            <TableColumn fx:id="clDayBeginWork" prefWidth="199.0" text="Ngày bắt đầu làm việc" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtName" layoutX="205.0" layoutY="92.0" promptText="Name" />
+      <TextField fx:id="txtGender" layoutX="205.0" layoutY="143.0" promptText="Gender" />
+      <TextField fx:id="txtPhoneNumber" layoutX="205.0" layoutY="198.0" promptText="Phone number" />
+      <TextField fx:id="txtId" layoutX="205.0" layoutY="40.0" promptText="ID" />
+      <TextField fx:id="txtAddress" layoutX="742.0" layoutY="40.0" promptText="Address" />
+      <TextField fx:id="txtEmail" layoutX="742.0" layoutY="92.0" promptText="Email" />
+      <Button layoutX="83.0" layoutY="311.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="31.0" prefWidth="95.0" text="Thêm mới" />
+      <Button layoutX="237.0" layoutY="311.0" mnemonicParsing="false" onAction="#save" prefHeight="31.0" prefWidth="69.0" text="Lưu" />
+      <Button layoutX="379.0" layoutY="311.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="69.0" text="Xóa" />
+      <Text layoutX="56.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập ID" />
+      <Text layoutX="56.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập họ tên" />
+      <Text layoutX="56.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập giới tính" />
+      <Text layoutX="56.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập số điện thoại" />
+      <Text layoutX="606.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập địa chỉ" />
+      <Text layoutX="605.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập email" />
+      <Button layoutX="858.0" layoutY="311.0" mnemonicParsing="false" prefHeight="31.0" onAction="#wage" prefWidth="111.0" text="Tính lương" />
+      <Button layoutX="681.0" layoutY="311.0" mnemonicParsing="false" onAction="#findPerson" prefHeight="31.0" prefWidth="95.0" text="Tìm kiếm" />
+      <TextField fx:id="txtDateOfBirth" layoutX="742.0" layoutY="143.0" promptText="dd/MM/yyyy" />
+      <Text layoutX="606.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập ngày sinh" />
+      <Button layoutX="1061.0" layoutY="311.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="84.0" text="Trở lại" />
+      <Button layoutX="528.0" layoutY="311.0" mnemonicParsing="false" onAction="#edit" prefHeight="31.0" prefWidth="69.0" text="Sửa" />
+      <TextField fx:id="txtDayBegin" layoutX="742.0" layoutY="198.0" promptText="Day begin work(dd/MM/yyyy)" />
+      <Text layoutX="606.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập ngày đi làm" />
+   </children>
+</AnchorPane>
