@@ -16,7 +16,6 @@
       <TextField fx:id="idTxt" layoutX="192.0" layoutY="56.0" prefHeight="31.0" prefWidth="208.0" />
       <TextField fx:id="nameTxt" layoutX="192.0" layoutY="121.0" prefHeight="31.0" prefWidth="208.0" />
       <Text layoutX="47.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="55.515625" />
-      <TextField fx:id="genderTxt" layoutX="192.0" layoutY="183.0" prefHeight="31.0" prefWidth="208.0" />
       <TextField fx:id="sdtTxt" layoutX="192.0" layoutY="246.0" prefHeight="31.0" prefWidth="208.0" />
       <Text layoutX="47.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" />
       <TextField fx:id="arTxt" layoutX="192.0" layoutY="306.0" prefHeight="31.0" prefWidth="208.0" />
@@ -37,5 +36,7 @@
             <Glow level="0.67" />
          </effect>
       </Text>
+      <RadioButton fx:id="female" layoutX="296.0" layoutY="189.0" mnemonicParsing="false" text="Nữ" />
+      <RadioButton fx:id="male" layoutX="192.0" layoutY="189.0" mnemonicParsing="false" text="Nam" />
    </children>
 </AnchorPane>

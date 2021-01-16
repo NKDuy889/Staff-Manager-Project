@@ -25,3 +25,5 @@ B
 src/view/wage.fxml,d\f\dfb5bdf155307c0db1b3f55abe4aa178e417a05e
 R
 "src/controller/WageController.java,1\9\190142ef6c3a538b1069b3cc45ee66fe0697474f
+R
+"src/controller/BaseController.java,a\d\ad7ceb03b1e3f2e84fc067f9d381be95491e948f

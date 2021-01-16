@@ -1,17 +1,17 @@
 
 j
-java:S2095>"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓßž8“À¸Ÿð.
+java:S2095R"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓßž8“À¸Ÿð.
 j
-java:S2095n"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓßž8õ—Ö ð.
+java:S1192R"MDefine a constant instead of duplicating this literal "src/file.txt" 3 times.(ãÓßž8õ—Ö ð.
 q
-java:S2095o"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8õ—Ö ð.
-r
-java:S2095b"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8ªÛÏ ð.
-U	java:S106f"9Replace this use of System.out or System.err by a logger.(‰·¤È8ªÛÏ ð.
-q
-java:S2095?"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8“À¸Ÿð.
+java:S2095S"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8“À¸Ÿð.
+U	java:S106z"9Replace this use of System.out or System.err by a logger.(‰·¤È8„ŒÙÕð.
+[	java:S106…"9Replace this use of System.out or System.err by a logger.(ÃµÉ®ýÿÿÿÿ8„ŒÙÕð.
 p
-java:S2095a"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8ªÛÏ ð.
-j
-java:S1192>"MDefine a constant instead of duplicating this literal "src/file.txt" 3 times.(ãÓßž8õ—Ö ð.
-Z	java:S106q"9Replace this use of System.out or System.err by a logger.(ÃµÉ®ýÿÿÿÿ8ôÉÖ ð.
+java:S2095u"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8ªÛÏ ð.
+k
+java:S2095‚"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓßž8õ—Ö ð.
+r
+java:S2095v"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8ªÛÏ ð.
+r
+java:S2095ƒ"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8õ—Ö ð.

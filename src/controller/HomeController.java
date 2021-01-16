@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Employee;
 import javafx.collections.FXCollections;
@@ -11,19 +12,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import utils.StageUtils;
+import utils.Storage;
 
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
-public class HomeController implements Initializable {
+public class HomeController extends BaseController implements Initializable {
     @FXML
     private TableView<Employee> tableView;
 
@@ -51,8 +50,6 @@ public class HomeController implements Initializable {
     @FXML
     private TableColumn<Employee, String> clDayBeginWork;
 
-    private ObservableList<Employee> employeeList;
-
     @FXML
     private TextField txtDateOfBirth;
 
@@ -61,9 +58,6 @@ public class HomeController implements Initializable {
 
     @FXML
     private TextField txtName;
-
-    @FXML
-    private TextField txtGender;
 
     @FXML
     private TextField txtPhoneNumber;
@@ -77,10 +71,27 @@ public class HomeController implements Initializable {
     @FXML
     private TextField txtDayBegin;
 
+    @FXML
+    RadioButton male;
+
+    @FXML
+    RadioButton female;
+
+    @FXML
+    RadioButton allGender;
+
+    private ToggleGroup toggleGroup;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        employeeList = FXCollections.observableArrayList();
-        writeFileToList();
+        male.setUserData("Nam");
+        female.setUserData("Nữ");
+        allGender.setUserData("All");
+        allGender.setSelected(true);
+        toggleGroup = new ToggleGroup();
+        male.setToggleGroup(toggleGroup);
+        female.setToggleGroup(toggleGroup);
+        allGender.setToggleGroup(toggleGroup);
         clId.setCellValueFactory(new PropertyValueFactory<>("id"));
         clName.setCellValueFactory(new PropertyValueFactory<>("name"));
         clGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
@@ -89,91 +100,79 @@ public class HomeController implements Initializable {
         clEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         clDateOfBirth.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         clDayBeginWork.setCellValueFactory(new PropertyValueFactory<>("dayBeginWork"));
-        tableView.setItems(employeeList);
+        tableView.setItems(FXCollections.observableArrayList(Storage.getListEmployees()));
     }
 
     public void addEmployee() {
         Employee e = new Employee();
         e.setId(txtId.getText());
         e.setName(txtName.getText());
-        e.setGender(txtGender.getText());
+        e.setGender((String) toggleGroup.getSelectedToggle().getUserData());
         e.setPhoneNumber(txtPhoneNumber.getText());
         e.setAddress(txtAddress.getText());
         e.setEmail(txtEmail.getText());
         e.setDateOfBirth(txtDateOfBirth.getText());
         e.setDayBeginWork(txtDayBegin.getText());
-        employeeList.add(e);
+        Storage.add(e, tableView);
+        clear();
+    }
+
+    public void clear() {
+        txtId.clear();
+        txtName.clear();
+        txtPhoneNumber.clear();
+        txtAddress.clear();
+        txtEmail.clear();
+        txtDateOfBirth.clear();
+        txtDayBegin.clear();
     }
 
     public void save() {
-        try {
-            FileOutputStream fos = new FileOutputStream("src/file.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(new ArrayList<>(employeeList));
-            oos.close();
-            fos.close();
-            System.out.println("File save successly");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Storage.save();
     }
 
-    public void writeFileToList() {
-        try {
-            FileInputStream fis = new FileInputStream("src/file.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            ObservableList<Employee> employees = FXCollections.observableList((List<Employee>) ois.readObject());
-            employeeList.addAll(employees);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void delete(ActionEvent event) {
+    public void delete() {
         Employee selected = tableView.getSelectionModel().getSelectedItem();
-        employeeList.remove(selected);
+        Storage.delete(selected, tableView);
     }
 
     public void findPerson() {
-        ObservableList<Employee> list = FXCollections.observableArrayList();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (txtId.getText().equals(clId.getCellData(i)) || txtName.getText().equals(clName.getCellData(i)) || txtPhoneNumber.getText().equals(clPhoneNumber.getCellData(i)) || txtGender.getText().equals(clGender.getCellData(i))) {
-                list.add(employeeList.get(i));
+        ObservableList<Employee> list = FXCollections.observableArrayList(Storage.getListEmployees().stream().filter(employee -> {
+            boolean nameCorrect = true;
+            boolean idCorrect = true;
+            boolean genderCorrect = true;
+            boolean phoneCorrect = true;
+            if (!isEmpty(txtId.getText())) {
+                idCorrect = txtId.getText().equals(employee.getId());
             }
-        }
+            if (!isEmpty(txtName.getText())) {
+                nameCorrect = employee.getName().contains(txtName.getText());
+            }
+            if (!isEmpty((String) toggleGroup.getSelectedToggle().getUserData())) {
+                genderCorrect = employee.getGender().equals(toggleGroup.getSelectedToggle().getUserData());
+            }
+            if ("All".equals(toggleGroup.getSelectedToggle().getUserData())) {
+                genderCorrect = true;
+            }
+            if (!isEmpty(txtPhoneNumber.getText())) {
+                phoneCorrect = employee.getPhoneNumber().equals(txtPhoneNumber.getText());
+            }
+            return nameCorrect && idCorrect && genderCorrect && phoneCorrect;
+        }).collect(Collectors.toList()));
         tableView.setItems(list);
+    }
+
+    private boolean isEmpty(String val) {
+        return "".equals(val.trim());
     }
 
     public void goBack() {
         StageUtils.openView("../view/home.fxml", true);
     }
 
-//    public void change(TableColumn<Employee, String> column){
-//        tableView.setEditable(true);
-//        column.setCellFactory(TextFieldTableCell.forTableColumn());
-//        column.setOnEditCommit((TableColumn.CellEditEvent<Employee, String> event) -> {
-//            TablePosition<Employee, String> pos = event.getTablePosition();
-//            String newId = event.getNewValue();
-//            int row = pos.getRow();
-//            // m phải lấy đc field từ đây
-//            // xem nó sửa filed nào thì set value vào field đấy
-////            int a = pos.getColumn();
-//            Employee person = event.getTableView().getItems().get(row);
-//            person.setId(newId);
-//        });
-//    }
-
-
     public void edit(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../view/edit.fxml"));
-        Parent editView = loader.load();
-        Scene scene = new Scene(editView);
-        EditController ctrl = loader.getController();
         Employee e = tableView.getSelectionModel().getSelectedItem();
-        ctrl.setEmployee(e);
-        stage.setScene(scene);
+        StageUtils.openDialog("edit.fxml", "Edit", e, this);
     }
 
     public void wage(ActionEvent event) throws IOException {
@@ -188,4 +187,9 @@ public class HomeController implements Initializable {
         stage.setScene(scene);
     }
 
+    @Override
+    public void closeEvent() {
+        findPerson();
+        tableView.refresh();
+    }
 }

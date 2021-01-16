@@ -1,13 +1,23 @@
 
-Y	java:S125—"<This block of commented-out lines of code should be removed.(¬ÏÜ…8­¢É¢ğ.
-q
-java:S2095|"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8¶ÃñÔï.
-U	java:S106s"9Replace this use of System.out or System.err by a logger.(‰·¤È8·Œüÿï.
-p
-java:S2095n"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8É†ñÏï.
-r
-java:S2095o"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8”ÛàÍï.
-j
-java:S2095{"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8·íïÔï.
+Y	java:S125à"<This block of commented-out lines of code should be removed.(¢‘Ö¥8£—Üğ.
+^	java:S125Ù"<This block of commented-out lines of code should be removed.(õ«¦üıÿÿÿÿ8ÛãÛğ.
+V	java:S106Œ"9Replace this use of System.out or System.err by a logger.(‰·¤È8·Œüÿï.
+Š
+java:S1130Ø"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(çô«£8§±Üğ.
+J
+java:S1172Ø",Remove this unused method parameter "event".(çô«£8ÙÎãÛğ.
+k
+java:S2095”"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8·íïÔï.
 I
-java:S1172„",Remove this unused method parameter "event".(ÔîÀ8­¢É¢ğ.
+java:S1172",Remove this unused method parameter "event".(ÔîÀ8­¢É¢ğ.
+^	java:S125£"<This block of commented-out lines of code should be removed.(È«É¡ùÿÿÿÿ8â»õÔğ.
+q
+java:S2095‡"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8É†ñÏï.
+r
+java:S2095•"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8¶ÃñÔï.
+Y	java:S125È"<This block of commented-out lines of code should be removed.(¬ÏÜ…8ş¾¹Óğ.
+Z
+java:S3972¸"7Move this "if" to a new line or add the missing "else".(çÛ¢ûÿÿÿÿ8Ùïİğ.
+s
+java:S2095ˆ"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8”ÛàÍï.
+]	java:S125["<This block of commented-out lines of code should be removed.(ªÙÜÛıÿÿÿÿ8ù»Şİğ.
