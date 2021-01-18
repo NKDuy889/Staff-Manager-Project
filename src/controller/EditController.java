@@ -8,6 +8,11 @@ import model.Employee;
 import utils.StageUtils;
 import utils.Storage;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.List;
+
 public class EditController extends BaseController {
     @FXML
     TextField idTxt;
@@ -43,10 +48,12 @@ public class EditController extends BaseController {
     @Override
     public void setValueDialog(Object value) {
         Employee employee = (Employee) value;
-        if (employee.getId() == null) {
-            
-        }
         idTxt.setText(employee.getId());
+        if (idTxt.getText() == null) {
+            isEdit = false;
+        } else {
+            isEdit = true;
+        }
         nameTxt.setText(employee.getName());
         if ("Nam".equals(employee.getGender())) {
             male.setSelected(true);
@@ -70,7 +77,14 @@ public class EditController extends BaseController {
     }
 
     public void edit() {
-        Employee employee = Storage.getById(idTxt.getText());
+        Employee employee;
+        if (isEdit) {
+             employee = Storage.getById(idTxt.getText());
+            idTxt.setDisable(true);
+        } else  {
+             employee = new Employee();
+             employee.setId(idTxt.getText());
+        }
         employee.setName(nameTxt.getText());
         employee.setGender((String) toggleGroup.getSelectedToggle().getUserData());
         employee.setPhoneNumber(sdtTxt.getText());
@@ -78,7 +92,24 @@ public class EditController extends BaseController {
         employee.setEmail(emailTxt.getText());
         employee.setDateOfBirth(nsTxt.getText());
         employee.setDayBeginWork(dbgTxt.getText());
-        Storage.save();
+        if (isEdit){
+            Storage.save();
+        } else {
+            Storage.add(employee);
+        }
+
         goBack();
+    }
+
+    public static void read() throws IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream("src/file.txt");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        List<Employee> e = (List<Employee>) ois.readObject();
+        System.out.println(e);
+    }
+
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        EditController.read();
     }
 }

@@ -50,9 +50,6 @@ public class HomeController extends BaseController implements Initializable {
     private TableColumn<Employee, String> clDayBeginWork;
 
     @FXML
-    private TextField txtDateOfBirth;
-
-    @FXML
     private TextField txtId;
 
     @FXML
@@ -61,14 +58,6 @@ public class HomeController extends BaseController implements Initializable {
     @FXML
     private TextField txtPhoneNumber;
 
-    @FXML
-    private TextField txtAddress;
-
-    @FXML
-    private TextField txtEmail;
-
-    @FXML
-    private TextField txtDayBegin;
 
     @FXML
     RadioButton male;
@@ -104,7 +93,7 @@ public class HomeController extends BaseController implements Initializable {
     }
 
     public void addEmployee() {
-        StageUtils.openDialog("edit.fxml", "Add new employee", new Employee(), this);
+        StageUtils.openDialog("edit.fxml", "Edit", new Employee(), this);
     }
 
     public void save() {

@@ -1,35 +1,35 @@
 
-\
-java:S1118":Add a private constructor to hide the implicit public one.(Œ œ„üÿÿÿÿ8Ãúòúğ.
-Z	java:S106&"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ë¸Üğ.
-{
-java:S1171T"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8¹êàşğ.
-H
-java:S1444"+Make this "public static stage" field final(œ‰à8ë¸Üğ.
-J
-java:S1604O"(Make this anonymous inner class a lambda(¥×¤ïøÿÿÿÿ8úëáşğ.
-Q
-java:S3740K"/Provide the parametrized type for this generic.(Óæ•°úÿÿÿÿ8Ïïşğ.
-Q
-java:S3740O"/Provide the parametrized type for this generic.(¥×¤ïøÿÿÿÿ8òŠáşğ.
-]	java:S110R"<This class has 9 parents which is greater than 5 authorized.(åâ€”ùÿÿÿÿ8òŠáşğ.
-n
-java:S1104"QMake stage a static final constant or non-public and provide accessors if needed.(œ‰à8ë¸Üğ.
-r
-java:S1104"VMake stageModal a static final constant or non-public and provide accessors if needed.(¯®…%8ë¸Üğ.
 Q
 java:S3740O"/Provide the parametrized type for this generic.(¥×¤ïøÿÿÿÿ8Ïïşğ.
-{
-java:S1171^"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8¹êàşğ.
-L
-java:S3740J"/Provide the parametrized type for this generic.(¨Œ¬É8Ïïşğ.
 Q
-java:S3740I"/Provide the parametrized type for this generic.(ãîèÿùÿÿÿÿ8¹êàşğ.
+java:S3740O"/Provide the parametrized type for this generic.(¥×¤ïøÿÿÿÿ8òŠáşğ.
+\
+java:S1118":Add a private constructor to hide the implicit public one.(Œ œ„üÿÿÿÿ8Ãúòúğ.
 Q
 java:S3740O"/Provide the parametrized type for this generic.(¥×¤ïøÿÿÿÿ8òŠáşğ.
 Q
-java:S3740R"/Provide the parametrized type for this generic.(åâ€”ùÿÿÿÿ8òŠáşğ.
+java:S3740K"/Provide the parametrized type for this generic.(Óæ•°úÿÿÿÿ8Ïïşğ.
+L
+java:S3740J"/Provide the parametrized type for this generic.(¨Œ¬É8Ïïşğ.
 L
 java:S1444"0Make this "public static stageModal" field final(¯®…%8ë¸Üğ.
 Q
 java:S3740O"/Provide the parametrized type for this generic.(¥×¤ïøÿÿÿÿ8Ïïşğ.
+Q
+java:S3740R"/Provide the parametrized type for this generic.(åâ€”ùÿÿÿÿ8òŠáşğ.
+J
+java:S1604O"(Make this anonymous inner class a lambda(¥×¤ïøÿÿÿÿ8úëáşğ.
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ë¸Üğ.
+H
+java:S1444"+Make this "public static stage" field final(œ‰à8ë¸Üğ.
+{
+java:S1171^"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8¹êàşğ.
+r
+java:S1104"VMake stageModal a static final constant or non-public and provide accessors if needed.(¯®…%8ë¸Üğ.
+Q
+java:S3740I"/Provide the parametrized type for this generic.(ãîèÿùÿÿÿÿ8¹êàşğ.
+]	java:S110R"<This class has 9 parents which is greater than 5 authorized.(åâ€”ùÿÿÿÿ8òŠáşğ.
+n
+java:S1104"QMake stage a static final constant or non-public and provide accessors if needed.(œ‰à8ë¸Üğ.
+{
+java:S1171T"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8¹êàşğ.
