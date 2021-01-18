@@ -1,11 +1,23 @@
 package utils;
 
 import controller.BaseController;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StageUtils {
     public static Stage stage;
@@ -55,6 +67,56 @@ public class StageUtils {
         if (baseController != null)
             baseController.closeEvent();
         stageModal.close();
+        baseController = null;
+    }
+
+    public static <T extends BaseController> void addButtonToTable(TableView tableView, T clzz) {
+        ObservableList<TableColumn> lstColumn = tableView.getColumns();
+        List<TableColumn> array = lstColumn.stream().filter(column -> "action".equals(column.getId())).collect(Collectors.toList());
+        if(array.isEmpty()) {
+            return;
+        }
+        Callback<TableColumn, TableCell> cellFactory = new Callback<TableColumn, TableCell>() {
+            @Override
+            public TableCell call(final TableColumn param) {
+                final TableCell cell = new TableCell<Object, Void>() {
+                    private Button btnEdit = new Button("Edit");
+                    {
+                        btnEdit.setOnAction((ActionEvent event) -> {
+                            Object obj = getTableView().getItems().get(getIndex());
+                            clzz.onEdit(obj);
+                        });
+                        btnEdit.setPrefWidth(60);
+                        btnEdit.setLayoutX(20);
+                        btnEdit.setCursor(Cursor.HAND);
+                    }
+                    private final Button btnDelete = new Button("Delete");
+                    {
+                        btnDelete.setOnAction((ActionEvent event) -> {
+                            Object obj = getTableView().getItems().get(getIndex());
+                            clzz.onDelete(obj);
+                        });
+                        btnDelete.setPrefWidth(90);
+                        btnDelete.setLayoutX(100);
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            Pane pane = new Pane();
+                            pane.getChildren().add(btnEdit);
+                            pane.getChildren().add(btnDelete);
+                            setGraphic(pane);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+        array.get(0).setCellFactory(cellFactory);
     }
 
 }

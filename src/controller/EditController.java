@@ -38,14 +38,19 @@ public class EditController extends BaseController {
 
     private ToggleGroup toggleGroup;
 
+    private boolean isEdit = true;
+
     @Override
     public void setValueDialog(Object value) {
         Employee employee = (Employee) value;
+        if (employee.getId() == null) {
+            
+        }
         idTxt.setText(employee.getId());
         nameTxt.setText(employee.getName());
-        if (employee.getGender().equals("Nam")) {
+        if ("Nam".equals(employee.getGender())) {
             male.setSelected(true);
-        } else if (employee.getGender().equals("Nữ")) {
+        } else if ("Nữ".equals(employee.getGender())) {
             female.setSelected(true);
         }
         sdtTxt.setText(employee.getPhoneNumber());

@@ -1,17 +1,4 @@
 
-j
-java:S2095R"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8“À¸Ÿğ.
-j
-java:S1192R"MDefine a constant instead of duplicating this literal "src/file.txt" 3 times.(ãÓß8õ—Ö ğ.
-q
-java:S2095S"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8“À¸Ÿğ.
-U	java:S106z"9Replace this use of System.out or System.err by a logger.(‰·¤È8„ŒÙÕğ.
-[	java:S106…"9Replace this use of System.out or System.err by a logger.(ÃµÉ®ıÿÿÿÿ8„ŒÙÕğ.
-p
-java:S2095u"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Äâ¯Ïüÿÿÿÿ8ªÛÏ ğ.
-k
-java:S2095‚"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8õ—Ö ğ.
-r
-java:S2095v"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8ªÛÏ ğ.
-r
-java:S2095ƒ"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8õ—Ö ğ.
+D	java:S108.")Either remove or fill this block of code.(æ©î-8•»ñ.
+G
+java:S1068)"*Remove this unused "isEdit" private field.(•âıª8¼ºñ.

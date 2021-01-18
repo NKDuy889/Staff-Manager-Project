@@ -35,7 +35,6 @@ public class Controller {
                     }
                 }
             });
-
         } catch (Exception e) {
             e.printStackTrace();
         }

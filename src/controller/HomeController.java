@@ -18,7 +18,6 @@ import utils.Storage;
 
 import java.io.*;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -101,39 +100,15 @@ public class HomeController extends BaseController implements Initializable {
         clDateOfBirth.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         clDayBeginWork.setCellValueFactory(new PropertyValueFactory<>("dayBeginWork"));
         tableView.setItems(FXCollections.observableArrayList(Storage.getListEmployees()));
+        StageUtils.addButtonToTable(tableView, this);
     }
 
     public void addEmployee() {
-        Employee e = new Employee();
-        e.setId(txtId.getText());
-        e.setName(txtName.getText());
-        e.setGender((String) toggleGroup.getSelectedToggle().getUserData());
-        e.setPhoneNumber(txtPhoneNumber.getText());
-        e.setAddress(txtAddress.getText());
-        e.setEmail(txtEmail.getText());
-        e.setDateOfBirth(txtDateOfBirth.getText());
-        e.setDayBeginWork(txtDayBegin.getText());
-        Storage.add(e, tableView);
-        clear();
-    }
-
-    public void clear() {
-        txtId.clear();
-        txtName.clear();
-        txtPhoneNumber.clear();
-        txtAddress.clear();
-        txtEmail.clear();
-        txtDateOfBirth.clear();
-        txtDayBegin.clear();
+        StageUtils.openDialog("edit.fxml", "Add new employee", new Employee(), this);
     }
 
     public void save() {
         Storage.save();
-    }
-
-    public void delete() {
-        Employee selected = tableView.getSelectionModel().getSelectedItem();
-        Storage.delete(selected, tableView);
     }
 
     public void findPerson() {
@@ -166,14 +141,6 @@ public class HomeController extends BaseController implements Initializable {
         return "".equals(val.trim());
     }
 
-    public void goBack() {
-        StageUtils.openView("../view/home.fxml", true);
-    }
-
-    public void edit(ActionEvent event) throws IOException {
-        Employee e = tableView.getSelectionModel().getSelectedItem();
-        StageUtils.openDialog("edit.fxml", "Edit", e, this);
-    }
 
     public void wage(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -191,5 +158,15 @@ public class HomeController extends BaseController implements Initializable {
     public void closeEvent() {
         findPerson();
         tableView.refresh();
+    }
+
+    @Override
+    public void onEdit(Object obj) {
+        StageUtils.openDialog("edit.fxml", "Edit", obj, this);
+    }
+
+    @Override
+    public void onDelete(Object obj) {
+        Storage.delete((Employee) obj, tableView);
     }
 }

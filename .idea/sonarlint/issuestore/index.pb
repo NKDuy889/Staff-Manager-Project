@@ -27,3 +27,15 @@ R
 "src/controller/WageController.java,1\9\190142ef6c3a538b1069b3cc45ee66fe0697474f
 R
 "src/controller/BaseController.java,a\d\ad7ceb03b1e3f2e84fc067f9d381be95491e948f
+Z
+*out/production/case2-NgKDuy/view/edit.fxml,6\a\6a5bc2e4f538b9ff70752d82e42c933727b80e94
+T
+$out/production/case2-NgKDuy/file.txt,0\6\06756279a5994210a74b5782b5f9398b692cd8fe
+Z
+*out/production/case2-NgKDuy/view/home.fxml,6\1\61b8d6776e750012838f9c7c21cf651f84164f7a
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+Z
+*out/production/case2-NgKDuy/view/wage.fxml,1\8\18623edab7b0d12f3c881779e9536ff0f9cc45a1
+F
+src/utils/Storage.java,6\7\670cf5b002e2f7debbd9c2097ff2b6d35abefc03
