@@ -1,0 +1,12 @@
+
+r
+java:S2095I"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€λψÿÿÿÿ8“ªτίπ.
+q
+java:S2095="OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ΡÒ»¥ψÿÿÿÿ8η½ίπ.
+p
+java:S2095H"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Δβ―Οόÿÿÿÿ8“ªτίπ.
+j
+java:S2095<"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(γΣί8η½ίπ.
+U	java:S106M"9Replace this use of System.out or System.err by a logger.(‰·¤Θ8“ªτίπ.
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ΦΌΐΤÿÿÿÿÿ8Ϋυίπ.

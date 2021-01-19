@@ -1,0 +1,14 @@
+
+j
+java:S2095@"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ÄÜÎ“8Áğ…Çñ.
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ˆ¸ª÷şÿÿÿÿ8æÇñ.
+r
+java:S20954"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(¥€ë˜øÿÿÿÿ8˜‚€Çñ.
+q
+java:S2095A"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8Áğ…Çñ.
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(‰·¤È8£öÌÍñ.
+M
+java:S1128"+Remove this unused import 'model.Employee'.(ÍûŸÓúÿÿÿÿ8ÊÈ·Ğñ.
+p
+java:S20953"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ƒĞ¬şÿÿÿÿ8˜‚€Çñ.

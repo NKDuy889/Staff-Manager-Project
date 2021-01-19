@@ -1,7 +1,11 @@
 
-J
-java:S1068"(Remove this unused "wage" private field.(ÀšÂ¯ÿÿÿÿÿ8Ò •Äñ.
+T
+java:S1117z"8Rename "wage" which hides the field declared at line 21.(Ûì¡8É‰ºĞñ.
+n
+java:S1871Z"LThis branch's code block is the same as the block for the branch on line 87.(ğ·É´ÿÿÿÿÿ8ááĞñ.
 Q
-java:S3740("/Provide the parametrized type for this generic.(Ê¾€ûüÿÿÿÿ8œñÙ¦ñ.
+java:S3740'"/Provide the parametrized type for this generic.(Ê¾€ûüÿÿÿÿ8œñÙ¦ñ.
+U
+java:S1117h"8Rename "wage" which hides the field declared at line 21.(¥´ò8”ÜËñ.
 C
-java:S1170"!Make this final field static too.(ÀšÂ¯ÿÿÿÿÿ8ÿÑİ¦ñ.
+java:S1170"!Make this final field static too.(ÀšÂ¯ÿÿÿÿÿ8ÿÑİ¦ñ.
