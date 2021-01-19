@@ -7,36 +7,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="573.0" prefWidth="1160.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WageController">
+<AnchorPane prefHeight="573.0" prefWidth="1272.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WageController">
    <children>
       <TextField fx:id="idTf" layoutX="270.0" layoutY="72.0" />
       <Text layoutX="128.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
-      <Text layoutX="128.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ tên" />
-      <Text layoutX="128.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày đi làm" />
-      <Text layoutX="129.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số ngày nghỉ tháng" />
-      <Text layoutX="128.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tháng hiển thị lương" />
-      <Text layoutX="128.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lương tháng" />
-      <TextField fx:id="nameTf" layoutX="270.0" layoutY="135.0" />
-      <TextField fx:id="dayBeginWork" layoutX="270.0" layoutY="199.0" />
-      <TextField fx:id="monthTf" layoutX="270.0" layoutY="270.0" />
-      <TextField fx:id="dayOffTf" layoutX="270.0" layoutY="329.0" />
-      <TextField fx:id="sumWageTf" layoutX="270.0" layoutY="390.0" />
+      <Text layoutX="128.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Họ tên" />
+      <Text layoutX="124.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày bắt đầu đi làm" />
+      <Text layoutX="130.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số ngày nghỉ tháng" />
+      <Text layoutX="126.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tháng hiển thị lương" />
+      <TextField fx:id="nameTf" layoutX="271.0" layoutY="151.0" />
+      <TextField fx:id="dayBeginWork" layoutX="271.0" layoutY="225.0" />
+      <TextField fx:id="monthTf" layoutX="270.0" layoutY="303.0" promptText="month/year" />
+      <TextField fx:id="dayOffTf" layoutX="271.0" layoutY="374.0" />
       <Text fill="#b52e2e" layoutX="420.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wage caculation" textAlignment="CENTER">
          <font>
             <Font size="31.0" />
          </font>
       </Text>
-      <Button fx:id="wageCaculation" layoutX="188.0" layoutY="481.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="98.0" text="Tính lương" />
-      <Button layoutX="349.0" layoutY="481.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Tính lương tất cả" />
-      <TableView fx:id="table" layoutX="540.0" layoutY="69.0" prefHeight="352.0" prefWidth="513.0">
+      <Button fx:id="wageCaculation" layoutX="315.0" layoutY="440.0" mnemonicParsing="false" onAction="#addList" prefHeight="76.0" prefWidth="98.0" text="Tính lương" />
+      <Button layoutX="732.0" layoutY="481.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Tính lương tất cả" />
+      <TableView fx:id="table" layoutX="540.0" layoutY="69.0" prefHeight="352.0" prefWidth="608.0">
         <columns>
-          <TableColumn prefWidth="63.0" text="ID" />
-          <TableColumn prefWidth="125.0" text="Họ tên" />
-            <TableColumn prefWidth="191.0" text="Tháng hiển thị lương" />
-            <TableColumn prefWidth="133.0" text="Số lương" />
+          <TableColumn fx:id="idCl" prefWidth="63.0" text="ID" />
+          <TableColumn fx:id="nameCl" prefWidth="125.0" text="Họ tên" />
+            <TableColumn fx:id="monthCl" prefWidth="172.0" text="Tháng hiển thị lương" />
+            <TableColumn fx:id="wageCl" prefWidth="139.0" text="Số lương" />
+            <TableColumn fx:id="dayOffCl" prefWidth="108.0" text="Số ngày nghỉ" />
         </columns>
       </TableView>
-      <Text layoutX="586.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng lương tất cả nhân viên" />
-      <TextField layoutX="797.0" layoutY="481.0" prefHeight="31.0" prefWidth="211.0" />
+      <TextField layoutX="922.0" layoutY="481.0" prefHeight="31.0" prefWidth="211.0" />
+      <Button layoutX="616.0" layoutY="481.0" mnemonicParsing="false" text="Trở lại" />
+      <Button fx:id="delete" layoutX="501.0" layoutY="481.0" mnemonicParsing="false" onAction="#deleteEvent" text="Xóa" />
    </children>
 </AnchorPane>

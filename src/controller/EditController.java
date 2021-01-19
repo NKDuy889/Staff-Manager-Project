@@ -6,6 +6,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import model.Employee;
+import model.Wage;
 import utils.StageUtils;
 import utils.Storage;
 
@@ -58,6 +59,7 @@ public class EditController extends BaseController {
             isEdit = false;
         } else {
             isEdit = true;
+            idTxt.setDisable(true);
         }
         nameTxt.setText(employee.getName());
         if ("Nam".equals(employee.getGender())) {
@@ -85,11 +87,9 @@ public class EditController extends BaseController {
         Employee employee;
         if (isEdit) {
             employee = Storage.getById(idTxt.getText());
-            idTxt.setDisable(true);
         } else {
             employee = new Employee();
             employee.setId(idTxt.getText());
-
         }
         employee.setName(nameTxt.getText());
         employee.setGender((String) toggleGroup.getSelectedToggle().getUserData());
@@ -98,9 +98,9 @@ public class EditController extends BaseController {
         employee.setEmail(emailTxt.getText());
         employee.setDateOfBirth(nsTxt.getText());
         employee.setDayBeginWork(dbgTxt.getText());
-        checkIdExists(idTxt.getText());
-        checkIsDate(employee, nsTxt.getText());
-        checkIsDate(employee, dbgTxt.getText());
+//        checkIdExists(idTxt.getText());
+//        checkIsDate(employee, nsTxt.getText());
+//        checkIsDate(employee, dbgTxt.getText());
         checkIsEdit(employee);
         goBack();
     }
@@ -129,19 +129,19 @@ public class EditController extends BaseController {
     }
 
     public void checkIsEdit(Employee employee) {
-        if (isDate && idExist){
+//        if (isDate){
             if (isEdit) {
                 Storage.save();
             } else {
                 Storage.add(employee);
             }
-        }
+//        }
     }
 
     public static void read() throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("src/file.txt");
+        FileInputStream fis = new FileInputStream("src/wage.txt");
         ObjectInputStream ois = new ObjectInputStream(fis);
-        List<Employee> e = (List<Employee>) ois.readObject();
+        List<Wage> e = (List<Wage>) ois.readObject();
         System.out.println(e);
     }
 

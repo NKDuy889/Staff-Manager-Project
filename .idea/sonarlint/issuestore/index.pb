@@ -39,3 +39,9 @@ Z
 *out/production/case2-NgKDuy/view/wage.fxml,1\8\18623edab7b0d12f3c881779e9536ff0f9cc45a1
 F
 src/utils/Storage.java,6\7\670cf5b002e2f7debbd9c2097ff2b6d35abefc03
+<
+src/wage.txt,0\7\07c45d6081294cf740af14ddd5fc4ce059444e9f
+J
+src/utils/StorageWage.java,0\3\03dccac2f1b6f7143d8d206a60e15eb9a712791c
+C
+src/model/Wage.java,e\0\e0f92ae1b9b071cdefbfc2709339a430996e66a1

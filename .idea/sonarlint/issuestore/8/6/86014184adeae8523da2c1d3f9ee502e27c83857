@@ -1,6 +1,11 @@
 
-q
-java:S2095i"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8˜Şû£ñ.
-j
-java:S2095h"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8˜Şû£ñ.
-Z	java:S106k"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8ì¥¾¤ñ.
+r
+java:S2095"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8¼€ŸÂñ.
+M
+java:S10683"+Remove this unused "idExist" private field.(®°›·ûÿÿÿÿ8“¼Æñ.
+x
+java:S14503"VRemove the "idExist" field and declare it as a local variable in the relevant methods.(®°›·ûÿÿÿÿ8“¼Æñ.
+k
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8¼€ŸÂñ.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8¼€ŸÂñ.
+W	java:S125d"<This block of commented-out lines of code should be removed.(´À¸I8íÍÁÆñ.

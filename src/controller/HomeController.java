@@ -133,6 +133,8 @@ public class HomeController extends BaseController implements Initializable {
 
     public void wage(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        stage.setWidth(1582);
+//        stage.setHeight(861);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/wage.fxml"));
         Parent editView = loader.load();
@@ -141,6 +143,7 @@ public class HomeController extends BaseController implements Initializable {
         Employee e = tableView.getSelectionModel().getSelectedItem();
         ctrl.setEmployee(e);
         stage.setScene(scene);
+
     }
 
     @Override
