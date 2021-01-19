@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -45,6 +46,10 @@ public class EditController extends BaseController {
 
     private boolean isEdit = true;
 
+    private boolean isDate = true;
+
+    private boolean idExist = true;
+
     @Override
     public void setValueDialog(Object value) {
         Employee employee = (Employee) value;
@@ -79,11 +84,12 @@ public class EditController extends BaseController {
     public void edit() {
         Employee employee;
         if (isEdit) {
-             employee = Storage.getById(idTxt.getText());
+            employee = Storage.getById(idTxt.getText());
             idTxt.setDisable(true);
-        } else  {
-             employee = new Employee();
-             employee.setId(idTxt.getText());
+        } else {
+            employee = new Employee();
+            employee.setId(idTxt.getText());
+
         }
         employee.setName(nameTxt.getText());
         employee.setGender((String) toggleGroup.getSelectedToggle().getUserData());
@@ -92,13 +98,44 @@ public class EditController extends BaseController {
         employee.setEmail(emailTxt.getText());
         employee.setDateOfBirth(nsTxt.getText());
         employee.setDayBeginWork(dbgTxt.getText());
-        if (isEdit){
-            Storage.save();
-        } else {
-            Storage.add(employee);
-        }
-
+        checkIdExists(idTxt.getText());
+        checkIsDate(employee, nsTxt.getText());
+        checkIsDate(employee, dbgTxt.getText());
+        checkIsEdit(employee);
         goBack();
+    }
+
+    public void checkIdExists(String a){
+        for (Employee e: Storage.getListEmployees()) {
+            if (e.getId().equals(a) ){
+                idExist = false;
+                Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
+                dateWrong.setContentText("ID ALREADY EXISTS");
+                dateWrong.show();
+            }
+        }
+    }
+
+    public void checkIsDate(Employee employee, String... date){
+        if (date.length > 0 && date[0].matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$")) {
+            isDate = true;
+            employee.setDateOfBirth(date[0]);
+        } else {
+            isDate = false;
+            Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
+            dateWrong.setContentText("WRONG PATTERN DATE. ENTER AGAIN");
+            dateWrong.show();
+        }
+    }
+
+    public void checkIsEdit(Employee employee) {
+        if (isDate && idExist){
+            if (isEdit) {
+                Storage.save();
+            } else {
+                Storage.add(employee);
+            }
+        }
     }
 
     public static void read() throws IOException, ClassNotFoundException {
@@ -107,7 +144,6 @@ public class EditController extends BaseController {
         List<Employee> e = (List<Employee>) ois.readObject();
         System.out.println(e);
     }
-
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         EditController.read();

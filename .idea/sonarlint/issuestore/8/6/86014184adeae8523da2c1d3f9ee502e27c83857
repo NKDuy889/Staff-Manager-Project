@@ -1,4 +1,6 @@
 
-G
-java:S1068)"*Remove this unused "isEdit" private field.(•âıª8¼ºñ.
-D	java:S108.")Either remove or fill this block of code.(æ©î-8•»ñ.
+q
+java:S2095i"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(ÑÒ»¥øÿÿÿÿ8˜Şû£ñ.
+j
+java:S2095h"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ãÓß8˜Şû£ñ.
+Z	java:S106k"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8ì¥¾¤ñ.

@@ -19,9 +19,9 @@
       <TextField fx:id="sdtTxt" layoutX="192.0" layoutY="246.0" prefHeight="31.0" prefWidth="208.0" />
       <Text layoutX="47.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" />
       <TextField fx:id="arTxt" layoutX="192.0" layoutY="306.0" prefHeight="31.0" prefWidth="208.0" />
-      <TextField fx:id="emailTxt" layoutX="192.0" layoutY="369.0" prefHeight="31.0" prefWidth="208.0" />
-      <TextField fx:id="nsTxt" layoutX="192.0" layoutY="432.0" prefHeight="31.0" prefWidth="208.0" />
-      <TextField fx:id="dbgTxt" layoutX="192.0" layoutY="489.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="emailTxt" layoutX="192.0" layoutY="369.0" prefHeight="31.0" prefWidth="208.0" promptText="aa@gmail.com" />
+      <TextField fx:id="nsTxt" layoutX="192.0" layoutY="432.0" prefHeight="31.0" prefWidth="208.0" promptText="dd/MM/yyyy" />
+      <TextField fx:id="dbgTxt" layoutX="192.0" layoutY="489.0" prefHeight="31.0" prefWidth="208.0" promptText="dd/MM/yyyy" />
       <Text layoutX="47.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <Text layoutX="47.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
       <Text layoutX="47.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" />
