@@ -105,7 +105,7 @@ public class WageController implements Initializable {
             return -1;
         } else if (year < yearWork) {
             isOverDate = false;
-            return -1;
+            return 1;
         } else if (month == monthWork && year == yearWork) {
             isOverDate = true;
             return (dayOfMonth - dayWork - 1 - dayOff) * wage;
@@ -122,14 +122,28 @@ public class WageController implements Initializable {
         wage.setMonth(monthTf.getText());
         wage.setWage(String.valueOf(getDayWorking()));
         wage.setDayOff(dayOffTf.getText());
-        if (isOverDate) {
-            StorageWage.add(wage);
-            table.setItems(FXCollections.observableArrayList(StorageWage.getListWage()));
-        } else {
-            Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
-            dateWrong.setContentText("Hôm đấy bạn này chưa đi làm. Mời điền lại");
-            dateWrong.show();
+        if (checkMonthExists()){
+            if (isOverDate) {
+                StorageWage.add(wage);
+                table.setItems(FXCollections.observableArrayList(StorageWage.getListWage()));
+            } else {
+                Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
+                dateWrong.setContentText("Hôm đấy bạn này chưa đi làm. Mời điền lại");
+                dateWrong.show();
+            }
         }
+    }
+
+    public boolean checkMonthExists() {
+        for (Wage w : StorageWage.getListWage()) {
+            if (w.getMonth().equals(monthTf.getText())) {
+                Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
+                dateWrong.setContentText("Tháng cần tính lương đã tồn tại");
+                dateWrong.show();
+                return false;
+            }
+        }
+        return true;
     }
 
     public void deleteEvent() {
@@ -139,10 +153,11 @@ public class WageController implements Initializable {
         table.setItems(FXCollections.observableArrayList(StorageWage.getListWage()));
     }
 
+
     public void sumWage() {
         int b = 0;
         for (Wage w : StorageWage.getListWage()) {
-            if (w.getMonth().equals(monthS.getText()) ) {
+            if (w.getMonth().equals(monthS.getText())) {
                 int a = Integer.parseInt(w.getWage());
                 b = b + a;
             }

@@ -37,14 +37,6 @@ public class StorageWage {
         return FXCollections.observableArrayList(getListWage());
     }
 
-    public static void delete(Wage e, Object... table) {
-        listWage.remove(e);
-        saveWage();
-        if (table.length > 0) {
-            ((TableView<Wage>) table[0]).setItems(observerList());
-        }
-    }
-
     public static void saveWage() {
         try {
             FileOutputStream fos = new FileOutputStream("src/wage.txt");
