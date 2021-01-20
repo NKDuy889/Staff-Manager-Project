@@ -1,7 +1,6 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -98,44 +97,16 @@ public class EditController extends BaseController {
         employee.setEmail(emailTxt.getText());
         employee.setDateOfBirth(nsTxt.getText());
         employee.setDayBeginWork(dbgTxt.getText());
-//        checkIdExists(idTxt.getText());
-//        checkIsDate(employee, nsTxt.getText());
-//        checkIsDate(employee, dbgTxt.getText());
         checkIsEdit(employee);
         goBack();
     }
 
-    public void checkIdExists(String a){
-        for (Employee e: Storage.getListEmployees()) {
-            if (e.getId().equals(a) ){
-                idExist = false;
-                Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
-                dateWrong.setContentText("ID ALREADY EXISTS");
-                dateWrong.show();
-            }
-        }
-    }
-
-    public void checkIsDate(Employee employee, String... date){
-        if (date.length > 0 && date[0].matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$")) {
-            isDate = true;
-            employee.setDateOfBirth(date[0]);
-        } else {
-            isDate = false;
-            Alert dateWrong = new Alert(Alert.AlertType.INFORMATION);
-            dateWrong.setContentText("WRONG PATTERN DATE. ENTER AGAIN");
-            dateWrong.show();
-        }
-    }
-
     public void checkIsEdit(Employee employee) {
-//        if (isDate){
             if (isEdit) {
                 Storage.save();
             } else {
                 Storage.add(employee);
             }
-//        }
     }
 
     public static void read() throws IOException, ClassNotFoundException {

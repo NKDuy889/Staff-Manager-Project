@@ -25,7 +25,7 @@
          </font>
       </Text>
       <Button fx:id="wageCaculation" layoutX="315.0" layoutY="440.0" mnemonicParsing="false" onAction="#addList" prefHeight="76.0" prefWidth="98.0" text="Tính lương" />
-      <Button layoutX="732.0" layoutY="481.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="147.0" text="Tính lương tất cả" />
+      <Button layoutX="547.0" layoutY="501.0" mnemonicParsing="false" onAction="#sumWage" prefHeight="31.0" prefWidth="147.0" text="Tính lương tất cả" />
       <TableView fx:id="table" layoutX="540.0" layoutY="69.0" prefHeight="352.0" prefWidth="608.0">
         <columns>
           <TableColumn fx:id="idCl" prefWidth="63.0" text="ID" />
@@ -35,8 +35,10 @@
             <TableColumn fx:id="dayOffCl" prefWidth="108.0" text="Số ngày nghỉ" />
         </columns>
       </TableView>
-      <TextField layoutX="922.0" layoutY="481.0" prefHeight="31.0" prefWidth="211.0" />
-      <Button layoutX="616.0" layoutY="481.0" mnemonicParsing="false" text="Trở lại" />
-      <Button fx:id="delete" layoutX="501.0" layoutY="481.0" mnemonicParsing="false" onAction="#deleteEvent" text="Xóa" />
+      <TextField fx:id="monthS" layoutX="712.0" layoutY="440.0" prefHeight="31.0" prefWidth="187.0" promptText="month/year" />
+      <Button layoutX="1010.0" layoutY="501.0" mnemonicParsing="false" onAction="#goBack" text="Trở lại" />
+      <Button fx:id="delete" layoutX="1110.0" layoutY="501.0" mnemonicParsing="false" onAction="#deleteEvent" text="Xóa" />
+      <Text layoutX="636.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tháng" />
+      <TextField fx:id="sumW" layoutX="712.0" layoutY="501.0" />
    </children>
 </AnchorPane>

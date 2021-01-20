@@ -3,7 +3,6 @@ package utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
-import model.Employee;
 import model.Wage;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

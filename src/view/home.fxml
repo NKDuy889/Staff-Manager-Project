@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="1582.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="1549.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
       <TableView fx:id="tableView" layoutX="14.0" layoutY="377.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1511.0">
          <columns>
@@ -22,19 +22,24 @@
             <TableColumn fx:id="action" prefWidth="216.0" />
          </columns>
       </TableView>
-      <TextField fx:id="txtName" layoutX="205.0" layoutY="92.0" promptText="Name" />
-      <TextField fx:id="txtPhoneNumber" layoutX="205.0" layoutY="198.0" promptText="Phone number" />
-      <TextField fx:id="txtId" layoutX="205.0" layoutY="40.0" promptText="ID" />
+      <TextField fx:id="txtName" layoutX="840.0" layoutY="103.0" promptText="Name" />
+      <TextField fx:id="txtPhoneNumber" layoutX="840.0" layoutY="188.0" promptText="Phone number" />
+      <TextField fx:id="txtId" layoutX="274.0" layoutY="103.0" promptText="ID" />
       <Button layoutX="128.0" layoutY="289.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="65.0" prefWidth="139.0" text="Thêm mới" />
       <Button layoutX="450.0" layoutY="289.0" mnemonicParsing="false" onAction="#save" prefHeight="65.0" prefWidth="139.0" text="Lưu" />
-      <Text layoutX="56.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập ID" />
-      <Text layoutX="56.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập họ tên" />
-      <Text layoutX="56.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập giới tính" />
-      <Text layoutX="56.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập số điện thoại" />
+      <Text layoutX="157.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập ID" />
+      <Text layoutX="681.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập họ tên" />
+      <Text layoutX="157.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập giới tính" />
+      <Text layoutX="681.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập số điện thoại" />
       <Button layoutX="1078.0" layoutY="289.0" mnemonicParsing="false" onAction="#wage" prefHeight="65.0" prefWidth="139.0" text="Tính lương" />
       <Button layoutX="770.0" layoutY="289.0" mnemonicParsing="false" onAction="#findPerson" prefHeight="65.0" prefWidth="139.0" text="Tìm kiếm" />
-      <RadioButton fx:id="male" layoutX="205.0" layoutY="149.0" mnemonicParsing="false" text="Nam" />
-      <RadioButton fx:id="female" layoutX="282.0" layoutY="149.0" mnemonicParsing="false" text="Nữ" />
-      <RadioButton fx:id="allGender" layoutX="345.0" layoutY="149.0" mnemonicParsing="false" text="All" />
+      <RadioButton fx:id="male" layoutX="277.0" layoutY="193.0" mnemonicParsing="false" text="Nam" />
+      <RadioButton fx:id="female" layoutX="343.0" layoutY="193.0" mnemonicParsing="false" text="Nữ" />
+      <RadioButton fx:id="allGender" layoutX="399.0" layoutY="193.0" mnemonicParsing="false" text="All" />
+      <Text layoutX="472.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh sách nhân viên" textAlignment="CENTER" wrappingWidth="379.11669921875">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

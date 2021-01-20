@@ -1,17 +1,24 @@
 package controller;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Employee;
 import model.Wage;
 import utils.StorageWage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -37,6 +44,12 @@ public class WageController implements Initializable {
 
     @FXML
     private TableView table;
+
+    @FXML
+    private TextField monthS;
+
+    @FXML
+    private TextField sumW;
 
     @FXML
     private TableColumn<Wage, String> idCl;
@@ -69,6 +82,9 @@ public class WageController implements Initializable {
         wageCl.setCellValueFactory(new PropertyValueFactory<>("wage"));
         dayOffCl.setCellValueFactory(new PropertyValueFactory<>("dayOff"));
         table.setItems(FXCollections.observableArrayList(StorageWage.getListWage()));
+        idTf.setDisable(true);
+        dayBeginWork.setDisable(true);
+        nameTf.setDisable(true);
     }
 
     public int getDayWorking() {
@@ -97,7 +113,6 @@ public class WageController implements Initializable {
             isOverDate = true;
             return (dayOfMonth - dayOff) * wage;
         }
-
     }
 
     public void addList() {
@@ -107,7 +122,6 @@ public class WageController implements Initializable {
         wage.setMonth(monthTf.getText());
         wage.setWage(String.valueOf(getDayWorking()));
         wage.setDayOff(dayOffTf.getText());
-        getDayWorking();
         if (isOverDate) {
             StorageWage.add(wage);
             table.setItems(FXCollections.observableArrayList(StorageWage.getListWage()));
@@ -118,12 +132,31 @@ public class WageController implements Initializable {
         }
     }
 
-    public void deleteEvent(){
+    public void deleteEvent() {
         Wage wage = (Wage) table.getSelectionModel().getSelectedItem();
         StorageWage.getListWage().remove(wage);
         StorageWage.saveWage();
         table.setItems(FXCollections.observableArrayList(StorageWage.getListWage()));
     }
 
+    public void sumWage() {
+        int b = 0;
+        for (Wage w : StorageWage.getListWage()) {
+            if (w.getMonth().equals(monthS.getText()) ) {
+                int a = Integer.parseInt(w.getWage());
+                b = b + a;
+            }
+            sumW.setText(String.valueOf(b));
+        }
+    }
+
+    public void goBack(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../view/home.fxml"));
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+    }
 
 }
