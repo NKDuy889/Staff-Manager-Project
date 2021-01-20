@@ -5,14 +5,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import model.Employee;
-import model.Wage;
 import utils.StageUtils;
 import utils.Storage;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.List;
 
 public class EditController extends BaseController {
     @FXML
@@ -46,9 +40,6 @@ public class EditController extends BaseController {
 
     private boolean isEdit = true;
 
-    private boolean isDate = true;
-
-    private boolean idExist = true;
 
     @Override
     public void setValueDialog(Object value) {
@@ -109,14 +100,4 @@ public class EditController extends BaseController {
             }
     }
 
-    public static void read() throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("src/wage.txt");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        List<Wage> e = (List<Wage>) ois.readObject();
-        System.out.println(e);
-    }
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        EditController.read();
-    }
 }

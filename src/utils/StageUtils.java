@@ -32,7 +32,7 @@ public class StageUtils {
                 stage = new Stage();
                 stage.setTitle("Employee manager");
             }
-            stage.setScene(new Scene(root, 1319, 861));
+            stage.setScene(new Scene(root, 1455, 861));
             stage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());

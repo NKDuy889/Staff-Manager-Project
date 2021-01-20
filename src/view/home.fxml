@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="1549.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="1450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
-      <TableView fx:id="tableView" layoutX="14.0" layoutY="377.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1511.0">
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="377.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1413.0">
          <columns>
             <TableColumn fx:id="clId" prefWidth="54.0" text="ID" />
             <TableColumn fx:id="clName" prefWidth="193.0" text="Họ tên" />
@@ -17,9 +17,9 @@
             <TableColumn fx:id="clPhoneNumber" prefWidth="176.0" text="Số điện thoại" />
             <TableColumn fx:id="clAddress" prefWidth="197.0" text="Địa chỉ" />
             <TableColumn fx:id="clEmail" prefWidth="161.0" text="Email" />
-            <TableColumn fx:id="clDateOfBirth" prefWidth="216.0" text="Ngày sinh" />
-            <TableColumn fx:id="clDayBeginWork" prefWidth="199.0" text="Ngày bắt đầu làm việc" />
-            <TableColumn fx:id="action" prefWidth="216.0" />
+            <TableColumn fx:id="clDateOfBirth" prefWidth="167.0" text="Ngày sinh" />
+            <TableColumn fx:id="clDayBeginWork" prefWidth="181.0" text="Ngày bắt đầu làm việc" />
+            <TableColumn fx:id="action" prefWidth="283.0" />
          </columns>
       </TableView>
       <TextField fx:id="txtName" layoutX="840.0" layoutY="103.0" promptText="Name" />
